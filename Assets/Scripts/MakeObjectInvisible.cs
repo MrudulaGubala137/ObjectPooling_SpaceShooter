@@ -11,5 +11,6 @@ public class MakeObjectInvisible : MonoBehaviour
     public void OnBecameInvisible()
     {
       //  Destroy(gameObject);
+      this.gameObject.SetActive(false);
     }
 }

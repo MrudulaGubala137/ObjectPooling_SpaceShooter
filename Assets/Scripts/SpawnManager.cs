@@ -18,9 +18,17 @@ public class SpawnManager : MonoBehaviour
         time = time + Time.deltaTime;
         if(time>3f)
         {
-            GameObject temp=Instantiate(ObjectPoolScript.instance.GetObjectsFromPool("Asteroid"),new Vector3(Random.Range(-8.0f, 8f),4f,0f),Quaternion.identity);
+            // GameObject temp=Instantiate(ObjectPoolScript.instance.GetObjectsFromPool("Asteroid"),new Vector3(Random.Range(-8.0f, 8f),4f,0f),Quaternion.identity);
+            GameObject temp = (ObjectPoolScript.instance.GetObjectsFromPool("Asteroid"));
+            temp.transform.position=new Vector3(Random.Range(-8.0f, 8f), 4f, 0f);
             temp.SetActive(true);
             time = 0;
+            /* if (temp != null)
+             {
+                 this.transform.position = temp.transform.position+new Vector3(Random.Range(-8.0f, 8f), 4f, 0f);
+                 temp.SetActive(true);
+                 time = 0;
+             }*/
         }
        
 

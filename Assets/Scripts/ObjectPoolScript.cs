@@ -57,11 +57,11 @@ public void AddToPool()
     }*/
    public GameObject GetObjectsFromPool(string tagname)
     {
-        for (int i = 0; i < pool.Count; i++)
+        foreach(GameObject item in pool)
         {
-            if (pool[i].gameObject.tag == tagname)
+            if (item.gameObject.tag == tagname&& !item.activeInHierarchy)
             {
-                return pool[i];
+                return item;
                 // pool[i].gameObject.SetActive(true);
             }
 

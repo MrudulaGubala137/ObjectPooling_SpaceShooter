@@ -302,8 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8190e52cb1eab134abd2ed154bf6bb96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 1
-  bulletPrefab: {fileID: 7599758441570938641, guid: 4703fa10f812338409883c68c2e8cb78, type: 3}
+  playerSpeed: 2
   offSet: {x: 0, y: 1, z: 0}
 --- !u!70 &1478666252
 CapsuleCollider2D:
@@ -453,17 +452,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: shoot1
       objectReference: {fileID: 0}
+    - target: {fileID: 7599758441570938641, guid: 4703fa10f812338409883c68c2e8cb78, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7599758441570938647, guid: 4703fa10f812338409883c68c2e8cb78, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7599758441570938647, guid: 4703fa10f812338409883c68c2e8cb78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7599758441570938647, guid: 4703fa10f812338409883c68c2e8cb78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.732
+      value: 0.73
       objectReference: {fileID: 0}
     - target: {fileID: 7599758441570938647, guid: 4703fa10f812338409883c68c2e8cb78, type: 3}
       propertyPath: m_LocalPosition.z
@@ -496,6 +499,10 @@ PrefabInstance:
     - target: {fileID: 7599758441570938647, guid: 4703fa10f812338409883c68c2e8cb78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259170212422259799, guid: 4703fa10f812338409883c68c2e8cb78, type: 3}
+      propertyPath: bulletSpeed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4703fa10f812338409883c68c2e8cb78, type: 3}
