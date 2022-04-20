@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
      int playerHealth=10;
    // public GameObject bulletPrefab;
     public Vector3 offSet;
-    bool isGameOver = false;
+    public bool isGameOver = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +18,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (!isGameOver)
-       // {
+        if (!isGameOver)
+       {
             float inputX = Input.GetAxis("Horizontal");
             transform.Translate(0f, inputX * playerSpeed * Time.deltaTime, 0f);
             //Clamp player position within gameWindow
@@ -33,11 +33,11 @@ public class PlayerMovement : MonoBehaviour
             tempBullet.SetActive(true);
                     //Instantiate(bulletPrefab, transform.position + offSet, Quaternion.identity);
             }
-       // }
+       }
         if(playerHealth==0)
         {
             Destroy(gameObject);
-            //isGameOver = true;
+            isGameOver = true;
             print("GameOver");
 
         }
