@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public int playerSpeed;
      int playerHealth=10;
+    int maxHealth=10;
    // public GameObject bulletPrefab;
     public Vector3 offSet;
     public bool isGameOver = false;
@@ -48,8 +49,18 @@ public class PlayerMovement : MonoBehaviour
         {
             playerHealth--;
             collision.gameObject.SetActive(false);
-            print("player Health:"+playerHealth);
+            print("player Health Dec:"+playerHealth);
             
+        }
+       
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Health" && playerHealth < maxHealth)
+        {
+            playerHealth = Mathf.Clamp(playerHealth + 1, 0, maxHealth);
+            collision.gameObject.SetActive(false);
+            print("player Health inc:" + playerHealth);
         }
     }
 }

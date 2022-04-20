@@ -6,6 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     //public GameObject asteroid;
     float time;
+    float healthTime;
     PlayerMovement PlayerMovement;
     // Start is called before the first frame update
     void Start()
@@ -22,9 +23,11 @@ public class SpawnManager : MonoBehaviour
             if (time > 3f)
             {
                 // GameObject temp=Instantiate(ObjectPoolScript.instance.GetObjectsFromPool("Asteroid"),new Vector3(Random.Range(-8.0f, 8f),4f,0f),Quaternion.identity);
-                GameObject temp = (ObjectPoolScript.instance.GetObjectsFromPool("Asteroid"));
-                temp.transform.position = new Vector3(Random.Range(-8.0f, 8f), 4f, 0f);
-                temp.SetActive(true);
+                GameObject tempAsteroid = (ObjectPoolScript.instance.GetObjectsFromPool("Asteroid"));
+                
+                tempAsteroid.transform.position = new Vector3(Random.Range(-8.0f, 8f), 4f, 0f);
+                tempAsteroid.SetActive(true);
+
                 time = 0;
                 /* if (temp != null)
                  {
@@ -32,6 +35,14 @@ public class SpawnManager : MonoBehaviour
                      temp.SetActive(true);
                      time = 0;
                  }*/
+            }
+             healthTime= healthTime + Time.deltaTime;
+            if(healthTime >5f)
+            {
+                GameObject tempHealth = (ObjectPoolScript.instance.GetObjectsFromPool("Health"));
+                tempHealth.transform.position = new Vector3(Random.Range(-8.0f, 8f), 4f, 0f);
+                tempHealth.SetActive(true);
+                healthTime = 0;
             }
         }
        
