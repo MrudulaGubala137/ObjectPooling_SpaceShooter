@@ -37,7 +37,7 @@ public class SpawnManager : MonoBehaviour
                  }*/
             }
              healthTime= healthTime + Time.deltaTime;
-            if(healthTime >5f)
+            if(healthTime >30f)
             {
                 GameObject tempHealth = (ObjectPoolScript.instance.GetObjectsFromPool("Health"));
                 tempHealth.transform.position = new Vector3(Random.Range(-8.0f, 8f), 4f, 0f);
